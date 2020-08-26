@@ -1,6 +1,6 @@
 import React from "react";
 
-import { displayTimeWithoutSec, displayDate } from "../../utils/date-formatter";
+import { displayDateAndTime } from "../../utils/date-formatter";
 import "./JobCard.scss";
 
 function JobCard(props) {
@@ -16,9 +16,10 @@ function JobCard(props) {
           <span>{location}</span>
         </div>
         <div className="card__content--time">
-          <div>{displayDate(start)}</div>
+          <div>{displayDateAndTime(start, "date")}</div>
           <div>
-            {displayTimeWithoutSec(start)}-{displayTimeWithoutSec(end)}
+            {displayDateAndTime(start, "time")}-
+            {displayDateAndTime(end, "time")}
           </div>
         </div>
       </div>
