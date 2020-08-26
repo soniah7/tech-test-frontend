@@ -2,10 +2,10 @@ import React from "react";
 
 import { SectionGroup } from "../components/section/SectionGroup";
 import { SectionPanel } from "../components/section/SectionPanel";
-import Header from "./components/header/Header";
-import MenuBar from "./components/menu-bar/MenuBar";
-import JobCard from "./components/job-card/JobCard";
-import JobDetail from "./components/job-detail/JobDetail";
+import Header from "../components/header/Header";
+import MenuBar from "../components/menu-bar/MenuBar";
+import JobCard from "../components/job-card/JobCard";
+import DetailPage from "./views/detail-page/DetailPage";
 
 import { DataService } from "../service/DataService";
 import { integrateJobsAllocationIntoJobs } from "../utils/data-integrater";
@@ -47,7 +47,7 @@ export class QuestionThree extends React.Component {
                   })}
                 </div>
                 <div className="board__content--right">
-                  <JobDetail />
+                  <DetailPage />
                 </div>
               </div>
             </div>

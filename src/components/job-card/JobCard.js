@@ -1,9 +1,6 @@
 import React from "react";
 
-import {
-  displayTimeWithoutSec,
-  displayDate,
-} from "../../../utils/date-formatter";
+import { displayTimeWithoutSec, displayDate } from "../../utils/date-formatter";
 import "./JobCard.scss";
 
 function JobCard(props) {

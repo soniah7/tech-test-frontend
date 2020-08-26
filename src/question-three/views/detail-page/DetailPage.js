@@ -1,8 +1,8 @@
 import React from "react";
 
-import "./JobDetail.scss";
+import "./DetailPage.scss";
 
-function JobDetail() {
+function DetailPage(props) {
   return (
     <div className="job-detail">
       <div className="job-detail__block"></div>
@@ -12,4 +12,4 @@ function JobDetail() {
   );
 }
 
-export default JobDetail;
+export default DetailPage;
