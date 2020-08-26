@@ -33,21 +33,20 @@ export class QuestionTwo extends React.Component {
       resources = await DataService.getResources();
       jobAllocations = await DataService.getJobAllocations();
       activityAllocations = await DataService.getActivityAllocations();
+      integrateJobsIntoResources(jobs, jobAllocations, resources);
+      integrateActivitiesIntoResources(
+        activities,
+        activityAllocations,
+        resources
+      );
+      this.generateLanes(resources);
     } catch (e) {
       alert("failed to fetch data from axois client");
     }
-    integrateJobsIntoResources(jobs, jobAllocations, resources);
-    integrateActivitiesIntoResources(
-      activities,
-      activityAllocations,
-      resources
-    );
-    this.resources = resources;
-    this.generateLanes();
   }
 
-  generateLanes = () => {
-    const lanes = this.resources.map((resource) => {
+  generateLanes = (resources) => {
+    const lanes = resources.map((resource) => {
       const cards = [];
       for (const jobInfo of resource.jobsInfo) {
         cards.push({
