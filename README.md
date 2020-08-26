@@ -14,6 +14,7 @@ Run:
 
 
 ## Room for improvement:
+- Several assumptions about data returned from server were made in <em>/utils/data-integrator.js</em>. We assume that arrays of JSON are all sorted by value of id and each JSON object is uniquely identified by the id. This could be resolved by sort the array before using it. We also assume that no error occurs when integrating JSON objects together (for example, cannot find referenced object by its id). It could be more robust to add some error handling functions when integrating different data sources. 
 - For performance optimisation, could make a request for all the data sources once at the time of starting the whole web application and caching it, instead of making requests to server three times (one time for opening one question tab)
 - Automated testing
 - Really appreciate it if I could get any feedback from you :)
