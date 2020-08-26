@@ -24,11 +24,11 @@ export class QuestionThree extends React.Component {
     try {
       jobs = await DataService.getJobs();
       jobAllocations = await DataService.getJobAllocations();
+      integrateJobsAllocationIntoJobs(jobAllocations, jobs);
+      this.setState({ jobs: jobs });
     } catch (e) {
       alert("failed to fetch data from axois client");
     }
-    integrateJobsAllocationIntoJobs(jobAllocations, jobs);
-    this.setState({ jobs: jobs });
   }
 
   render() {
