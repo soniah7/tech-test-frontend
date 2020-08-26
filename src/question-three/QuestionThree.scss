@@ -1,13 +1,11 @@
 .board {
   display: flex;
-  align-self: stretch;
 
   &__content {
     display: flex;
 
     &--left {
       flex: 1;
-
       height: 600px;
       overflow: scroll;
       background-color: #e4eef1;
@@ -15,6 +13,9 @@
 
     &--right {
       flex: 2;
+      padding: 10px;
+      height: 600px;
+      overflow: scroll;
     }
   }
 }
