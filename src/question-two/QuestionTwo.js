@@ -9,7 +9,7 @@ import {
   integrateJobsIntoResources,
   integrateActivitiesIntoResources,
 } from "../utils/data-integrator";
-import { generateLanes } from "../utils/card-generator";
+import { generateLanes } from "../utils/lane-generator";
 import { DataService } from "../service/DataService";
 
 /**
