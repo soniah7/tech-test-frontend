@@ -8,7 +8,7 @@ import {
   integrateJobsIntoResources,
   integrateActivitiesIntoResources,
 } from "../utils/data-integrator";
-import { generateLanes } from "./lane-generator";
+import { generateLanes } from "./helpers/lane-generator";
 import { DataService } from "../service/DataService";
 
 /**
