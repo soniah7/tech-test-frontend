@@ -4,7 +4,7 @@
 
 .swimlane__lane {
   height: 50px;
-  width:100%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   border: 1px solid #d4d7de;
@@ -34,6 +34,7 @@
   bottom: 7px;
   overflow: hidden;
   display: inline-block;
+  font-size: 10px;
   border: 1px solid #d4d7de;
   box-shadow: 0 1px 6px 0 #d4d7de;
 }
