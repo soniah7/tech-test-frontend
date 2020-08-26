@@ -16,7 +16,7 @@ export class JobFeed extends React.Component {
     };
   }
 
-  async componentDidUpdate(prevProps) {
+  async componentDidMount() {
     let jobs, contacts;
     try {
       jobs = await DataService.getJobs();
@@ -27,7 +27,9 @@ export class JobFeed extends React.Component {
 
     integrateContactsIntoJobs(contacts, jobs);
     this.jobs = jobs;
+  }
 
+  componentDidUpdate(prevProps) {
     const searchTerm = this.props.search.searchTerm;
     if (prevProps.search.searchTerm !== searchTerm) {
       let searchResult = [];
