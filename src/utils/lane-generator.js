@@ -1,5 +1,15 @@
 import { taskCssStyleMapping, taskCssClassMapping } from "./task-css-generator";
 
+export const generateLanes = (resources) => {
+  const lanes = resources.map((resource) => {
+    const cards = generateCards(resource.tasks.jobsInfo, "job").concat(
+      generateCards(resource.tasks.activitiesInfo, "activity")
+    );
+    return { title: resource.name, cards };
+  });
+  return lanes;
+};
+
 export const generateCards = (tasks, taskType) => {
   const cards = [];
   for (const task of tasks) {
@@ -12,14 +22,4 @@ export const generateCards = (tasks, taskType) => {
     });
   }
   return cards;
-};
-
-export const generateLanes = (resources) => {
-  const lanes = resources.map((resource) => {
-    const cards = generateCards(resource.jobsInfo, "job").concat(
-      generateCards(resource.activitiesInfo, "activity")
-    );
-    return { title: resource.name, cards };
-  });
-  return lanes;
 };
