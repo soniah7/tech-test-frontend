@@ -1,7 +1,8 @@
 /**
- * Integrate different JSON data sources to match display format of data.
- * the integrator functions takes several data sources (array of JSON objects) and integrate them into one
+ * A set of functions integrating different JSON data sources to match display format of data.
+ * Function takes several data sources (array of JSON objects) and integrate them into one
  */
+
 export const integrateContactsIntoJobs = (contacts, jobs) => {
   jobs.forEach((job) => {
     job.contactName = contacts[job.contactId]
