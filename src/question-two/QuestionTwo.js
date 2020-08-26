@@ -8,7 +8,8 @@ import { Swimlane } from "../components/swimlane/Swimlane";
 import {
   integrateJobsIntoResources,
   integrateActivitiesIntoResources,
-} from "../utils/data-integrater";
+} from "../utils/data-integrator";
+import { generateLanes } from "../utils/card-generator";
 import { DataService } from "../service/DataService";
 
 /**
@@ -39,35 +40,11 @@ export class QuestionTwo extends React.Component {
         activityAllocations,
         resources
       );
-      this.generateLanes(resources);
+      this.setState({ lanes: generateLanes(resources) });
     } catch (e) {
-      alert("failed to fetch data from axois client");
+      alert(e.message);
     }
   }
-
-  generateLanes = (resources) => {
-    const lanes = resources.map((resource) => {
-      const cards = [];
-      for (const jobInfo of resource.jobsInfo) {
-        cards.push({
-          start: new Date(jobInfo.start),
-          end: new Date(jobInfo.end),
-          description: jobInfo.name,
-          style: { color: "red" },
-        });
-      }
-      for (const activityInfo of resource.activitiesInfo) {
-        cards.push({
-          start: new Date(activityInfo.start),
-          end: new Date(activityInfo.end),
-          description: activityInfo.name,
-          style: { color: "blue" },
-        });
-      }
-      return { title: resource.name, cards };
-    });
-    this.setState({ lanes });
-  };
 
   render() {
     return (
