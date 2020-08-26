@@ -41,7 +41,7 @@ export class QuestionTwo extends React.Component {
       );
       this.generateLanes(resources);
     } catch (e) {
-      alert("failed to fetch data from axois client");
+      alert(e.message);
     }
   }
 

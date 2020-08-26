@@ -28,7 +28,7 @@ export class QuestionThree extends React.Component {
       integrateJobsAllocationIntoJobs(jobAllocations, jobs);
       this.setState({ jobs: jobs });
     } catch (e) {
-      alert("failed to fetch data from axois client");
+      alert(e.message);
     }
   }
 

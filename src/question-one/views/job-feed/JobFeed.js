@@ -24,7 +24,7 @@ export class JobFeed extends React.Component {
       integrateContactsIntoJobs(contacts, jobs);
       this.jobs = jobs;
     } catch (e) {
-      alert("failed to fetch data from axois client");
+      alert(e.message);
     }
   }
 

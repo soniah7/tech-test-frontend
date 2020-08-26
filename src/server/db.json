@@ -31,6 +31,15 @@
       "start": "2018-09-01T13:00:00Z",
       "end": "2018-09-01T13:15:00Z",
       "location": "Brisbane"
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
     }
   ],
   "contacts": [
@@ -85,6 +94,15 @@
       "id": 1,
       "resourceId": 0,
       "jobId": 2
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
     }
   ],
   "activityAllocations": [
