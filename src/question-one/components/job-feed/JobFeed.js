@@ -21,12 +21,11 @@ export class JobFeed extends React.Component {
     try {
       jobs = await DataService.getJobs();
       contacts = await DataService.getContacts();
+      integrateContactsIntoJobs(contacts, jobs);
+      this.jobs = jobs;
     } catch (e) {
       alert("failed to fetch data from axois client");
     }
-
-    integrateContactsIntoJobs(contacts, jobs);
-    this.jobs = jobs;
   }
 
   componentDidUpdate(prevProps) {
@@ -36,20 +35,19 @@ export class JobFeed extends React.Component {
       if (searchTerm.length >= 3) {
         this.setState({ loading: true });
         searchResult = this.searchJobsByName(searchTerm);
-      } else {
-        searchResult = [];
       }
-
       //delay display of loading for 300ms to make it more obvious
       setTimeout(() => this.setState({ searchResult, loading: false }), 300);
     }
   }
 
   searchJobsByName(searchTerm) {
-    const searchResult = this.jobs.filter((job) =>
-      //assume using case insensitive search
-      job.name.toUpperCase().includes(searchTerm.toUpperCase())
-    );
+    const searchResult = this.jobs
+      ? this.jobs.filter((job) =>
+          //assume using case insensitive search
+          job.name.toUpperCase().includes(searchTerm.toUpperCase())
+        )
+      : [];
     return searchResult;
   }
 
