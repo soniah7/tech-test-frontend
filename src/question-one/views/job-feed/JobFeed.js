@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { displayDateAndTime } from "../../../utils/date-formatter";
-import { integrateContactsIntoJobs } from "../../../utils/data-integrater";
+import { integrateContactsIntoJobs } from "../../../utils/data-integrator";
 import { DataService } from "../../../service/DataService";
 
 import "./JobFeed.scss";
@@ -57,7 +57,7 @@ export class JobFeed extends React.Component {
         {this.state.loading
           ? "Loading..."
           : this.state.searchResult.map((job, index) => (
-              <div index={index} className="feed__row">
+              <div key={index} className="feed__row">
                 <span>{job.name}</span>
                 <span>
                   {`from ${displayDateAndTime(

@@ -8,7 +8,7 @@ import JobCard from "../components/job-card/JobCard";
 import DetailPage from "./views/detail-page/DetailPage";
 
 import { DataService } from "../service/DataService";
-import { integrateJobsAllocationIntoJobs } from "../utils/data-integrater";
+import { integrateJobsAllocationIntoJobs } from "../utils/data-integrator";
 
 import "./QuestionThree.scss";
 
@@ -26,7 +26,7 @@ export class QuestionThree extends React.Component {
       jobs = await DataService.getJobs();
       jobAllocations = await DataService.getJobAllocations();
       integrateJobsAllocationIntoJobs(jobAllocations, jobs);
-      this.setState({ jobs: jobs });
+      this.setState({ jobs });
     } catch (e) {
       alert(e.message);
     }
@@ -42,8 +42,8 @@ export class QuestionThree extends React.Component {
               <Header />
               <div className="board__content">
                 <div className="board__content--left">
-                  {this.state.jobs.map((job) => {
-                    return <JobCard {...job} />;
+                  {this.state.jobs.map((job, index) => {
+                    return <JobCard key={index} {...job} />;
                   })}
                 </div>
                 <div className="board__content--right">

@@ -6,7 +6,7 @@
 
     &--left {
       flex: 1;
-      height: 600px;
+      height: calc(100vh - 200px);
       overflow: scroll;
       background-color: #e4eef1;
     }
@@ -14,7 +14,7 @@
     &--right {
       flex: 2;
       padding: 10px;
-      height: 600px;
+      height: calc(100vh - 200px);
       overflow: scroll;
     }
   }

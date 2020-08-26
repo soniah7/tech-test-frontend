@@ -1,4 +1,7 @@
-// integrate different JSON data sources to match requirement of display format of data
+/**
+ * A set of functions integrating different JSON data sources to match display format of data.
+ * Function takes several data sources (array of JSON objects) and integrate them into one
+ */
 
 export const integrateContactsIntoJobs = (contacts, jobs) => {
   jobs.forEach((job) => {
@@ -10,11 +13,14 @@ export const integrateContactsIntoJobs = (contacts, jobs) => {
 
 export const integrateJobsIntoResources = (jobs, jobAllocations, resources) => {
   resources.forEach((resource) => {
-    resource.jobsInfo = [];
+    if (!resource.tasks) {
+      resource.tasks = {};
+    }
+    resource.tasks.jobsInfo = [];
     const resourceId = resource.id;
     for (const allocation of jobAllocations) {
       if (Number(allocation.resourceId) === Number(resourceId)) {
-        resource.jobsInfo.push(jobs[allocation.jobId]);
+        resource.tasks.jobsInfo.push(jobs[allocation.jobId]);
       }
     }
   });
@@ -26,11 +32,14 @@ export const integrateActivitiesIntoResources = (
   resources
 ) => {
   resources.forEach((resource) => {
-    resource.activitiesInfo = [];
+    if (!resource.tasks) {
+      resource.tasks = {};
+    }
+    resource.tasks.activitiesInfo = [];
     const resourceId = resource.id;
     for (const allocation of activityAllocations) {
       if (Number(allocation.resourceId) === Number(resourceId)) {
-        resource.activitiesInfo.push(activities[allocation.activityId]);
+        resource.tasks.activitiesInfo.push(activities[allocation.activityId]);
       }
     }
   });

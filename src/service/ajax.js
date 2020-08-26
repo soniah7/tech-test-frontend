@@ -1,3 +1,5 @@
+// a function module that makes asynchronous ajax requests using axios.
+
 import Axios from "axios";
 
 export default function ajax(base, url, data = {}, type = "GET") {
