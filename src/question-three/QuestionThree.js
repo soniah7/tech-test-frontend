@@ -4,7 +4,8 @@ import { SectionGroup } from "../components/section/SectionGroup";
 import { SectionPanel } from "../components/section/SectionPanel";
 import Header from "./components/header/Header";
 import MenuBar from "./components/menu-bar/MenuBar";
-import Card from "./components/card/Card";
+import JobCard from "./components/job-card/JobCard";
+import JobDetail from "./components/job-detail/JobDetail";
 
 import { DataService } from "../service/DataService";
 import { integrateJobsAllocationIntoJobs } from "../utils/data-integrater";
@@ -42,10 +43,12 @@ export class QuestionThree extends React.Component {
               <div className="board__content">
                 <div className="board__content--left">
                   {this.state.jobs.map((job) => {
-                    return <Card {...job} />;
+                    return <JobCard {...job} />;
                   })}
                 </div>
-                <div className="board__content--right"></div>
+                <div className="board__content--right">
+                  <JobDetail />
+                </div>
               </div>
             </div>
           </div>

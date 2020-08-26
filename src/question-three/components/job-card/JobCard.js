@@ -4,9 +4,9 @@ import {
   displayTimeWithoutSec,
   displayDate,
 } from "../../../utils/date-formatter";
-import "./Card.scss";
+import "./JobCard.scss";
 
-function Card(props) {
+function JobCard(props) {
   const { name, start, end, location, id, numOfAllocations } = props;
   return (
     <div className="card">
@@ -35,4 +35,4 @@ function Card(props) {
   );
 }
 
-export default Card;
+export default JobCard;

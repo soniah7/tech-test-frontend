@@ -1,0 +1,11 @@
+.job-detail {
+  padding: 10px;
+  height: 600px;
+  overflow: scroll;
+
+  &__block {
+    margin: 10px auto;
+    height: 200px;
+    background-color: #e4eef1;
+  }
+}
