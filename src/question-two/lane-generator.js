@@ -1,16 +1,20 @@
-import { taskCssStyleMapping, taskCssClassMapping } from "./task-css-generator";
+import { taskCssStyleMapping, taskCssClassMapping } from "./lane-css-generator";
 
 export const generateLanes = (resources) => {
   const lanes = resources.map((resource) => {
-    const cards = generateCards(resource.tasks.jobsInfo, "job").concat(
-      generateCards(resource.tasks.activitiesInfo, "activity")
-    );
+    let cards = [];
+    // concat array of cards for tasks of different taskTypes such as job and activity
+    for (const taskType of Object.keys(resource.tasks)) {
+      cards = cards.concat(generateCards(resource.tasks[taskType], taskType));
+    }
     return { title: resource.name, cards };
   });
+
   return lanes;
 };
 
-export const generateCards = (tasks, taskType) => {
+// generate an array of cards for tasks of a specific taskType
+const generateCards = (tasks, taskType) => {
   const cards = [];
   for (const task of tasks) {
     cards.push({

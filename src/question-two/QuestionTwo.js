@@ -2,14 +2,13 @@ import React from "react";
 
 import { SectionGroup } from "../components/section/SectionGroup";
 import { SectionPanel } from "../components/section/SectionPanel";
-
 import { Swimlane } from "../components/swimlane/Swimlane";
 
 import {
   integrateJobsIntoResources,
   integrateActivitiesIntoResources,
 } from "../utils/data-integrator";
-import { generateLanes } from "../utils/lane-generator";
+import { generateLanes } from "./lane-generator";
 import { DataService } from "../service/DataService";
 
 /**

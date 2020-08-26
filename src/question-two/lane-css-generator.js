@@ -1,10 +1,11 @@
+// map different task types to different css styles for displaying at swimlane
 export const taskCssStyleMapping = (taskType) => {
   switch (taskType) {
-    case "job":
+    case "jobsInfo":
       return {
         color: "red",
       };
-    case "activity":
+    case "activitiesInfo":
       return {
         color: "blue",
       };
@@ -18,9 +19,9 @@ export const taskCssStyleMapping = (taskType) => {
 // this is only a sample function, since css classes for different task types have not been implemented yet
 export const taskCssClassMapping = (taskType) => {
   switch (taskType) {
-    case "job":
+    case "jobsInfo":
       return "";
-    case "activity":
+    case "activitiesInfo":
       return "";
     default:
       return "";
