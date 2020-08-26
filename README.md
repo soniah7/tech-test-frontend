@@ -14,7 +14,7 @@ Run:
 
 
 ## Room for improvement:
-- Make a request for all the data sources once at the time of starting the whole web application and caching it, instead of making requests to server three times (one time for opening one question tab), to optimise performance
+- For performance optimisation, could make a request for all the data sources once at the time of starting the whole web application and caching it, instead of making requests to server three times (one time for opening one question tab)
 - Automated testing
 - Really appreciate it if I could get any feedback from you :)
 
